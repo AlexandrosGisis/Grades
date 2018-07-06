@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    class GradeBook
+    public class GradeBook
     {
         List<float> grades;
         public GradeBook()
         {
             grades = new List<float>();
         }
+
+        public string Name { get; set; }
+
         public void AddGrades(float grade)
         {
             grades.Add(grade);
