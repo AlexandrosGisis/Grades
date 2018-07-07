@@ -14,7 +14,19 @@ namespace Grades
             grades = new List<float>();
         }
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    _name = value; 
+            }
+        }
+        private string _name;
 
         public void AddGrades(float grade)
         {

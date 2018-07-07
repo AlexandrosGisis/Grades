@@ -15,7 +15,10 @@ namespace Grades
             book.AddGrades(80);
             book.AddGrades(95.4f);
             book.AddGrades(73);
+            book.Name = "Alex";
+            book.Name = null;
 
+            Console.WriteLine(book.Name);
             GradeStatistics stats = book.ComputeStatistics();
             WriteResult("Average Grade",stats.AverageGrade);
             WriteResult("Highest Grade",stats.HighestGrade);
