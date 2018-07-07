@@ -11,13 +11,28 @@ namespace Grades.Test.Types
     public class TypesTest
     {
         [TestMethod]
+        public void UsingArrays()
+        {
+            float[] grades;
+            grades = new float[3];
+
+            AddGrades(grades);
+            Assert.AreEqual(grades[1], 81.5f);
+        }
+
+        private void AddGrades(float[] grades)
+        {
+            grades[1] = 81.5f;
+        }
+
+        [TestMethod]
         public void StringComparisons()
         {
             string name1 = "Alex";
             string name2 = name1;
 
             name1 = "Tas";
-            Assert.AreEqual(name1, name2);
+            Assert.AreNotEqual(name1, name2);
         }
 
         [TestMethod]
