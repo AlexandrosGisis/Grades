@@ -34,7 +34,7 @@ namespace Grades
             }
         }
 
-        public NameChangedDelegate NameChanged;
+        public event NameChangedDelegate NameChanged;
         private string _name;
 
         public void AddGrades(float grade)

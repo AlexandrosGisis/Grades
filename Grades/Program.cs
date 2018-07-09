@@ -14,7 +14,7 @@ namespace Grades
             book.AddGrades(80);
             book.AddGrades(95.4f);
             book.AddGrades(73);
-            book.NameChanged = new NameChangedDelegate(OnNameChanged);
+            book.NameChanged += new NameChangedDelegate(OnNameChanged);
             book.Name = "Alex";
            
 
