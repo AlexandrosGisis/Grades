@@ -9,7 +9,6 @@ namespace Grades
 {
     public class GradeBook
     {
-        List<float> grades;
         public GradeBook()
         {
             _name = "Empty";
@@ -50,13 +49,14 @@ namespace Grades
 
         public event NameChangedDelegate NameChanged;
         private string _name;
+        protected List<float> grades;
 
         public void AddGrades(float grade)
         {
             grades.Add(grade);
         }
 
-        public GradeStatistics ComputeStatistics()
+        public virtual GradeStatistics ComputeStatistics()
         {
             GradeStatistics stats = new GradeStatistics();
             float sum = 0;

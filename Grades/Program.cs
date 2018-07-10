@@ -11,12 +11,17 @@ namespace Grades
     {
         static void Main(string[] args)
         {
-            GradeBook book = new GradeBook();
+            GradeBook book = CreateGradeBook();
 
             AddGrades(book);
-            GetBookName(book);
+            //GetBookName(book);
             WriteResults(book);
             SaveGrades(book);
+        }
+
+        private static GradeBook CreateGradeBook()
+        {
+            return new ThrowAwayLowestGrade();
         }
 
         private static void SaveGrades(GradeBook book)
@@ -42,7 +47,7 @@ namespace Grades
 
         private static void AddGrades(GradeBook book)
         {
-            book.AddGrades(80);
+            book.AddGrades(85);
             book.AddGrades(95.4f);
             book.AddGrades(73);
         }
