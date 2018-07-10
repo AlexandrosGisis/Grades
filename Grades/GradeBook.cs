@@ -29,7 +29,7 @@ namespace Grades
                     throw new ArgumentException("Name cannot be null or empty");
                 }
 
-                if (_name != value)
+                if (_name != value && NameChanged != null)
                 {
                     NameChangedEventArgs args = new NameChangedEventArgs();
                     args.ExistingName = _name;
@@ -40,11 +40,11 @@ namespace Grades
             }
         }
 
-        internal void WriteGrades(TextWriter destination)
+        public void WriteGrades(TextWriter destination)
         {
             for (int i = 0; i < grades.Count; i++)
             {
-                Console.WriteLine(grades[i]);
+                destination.WriteLine(grades[i]);
             }
         }
 
