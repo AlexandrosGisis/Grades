@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,8 +24,6 @@ namespace Grades
             }
         }
 
-        protected List<float> grades;
-
         public override void AddGrades(float grade)
         {
             grades.Add(grade);
@@ -43,5 +42,11 @@ namespace Grades
             stats.AverageGrade = sum / grades.Count;
             return stats;
         }
+
+        public override IEnumerator GetEnumerator()
+        {
+            return grades.GetEnumerator();
+        }
+        protected List<float> grades;
     }
 }
